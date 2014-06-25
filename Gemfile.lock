@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ridiculous/ruby-saml-idp.git
-  revision: 3dcc2c4311b697c00d96becf21a02240a3446a7c
+  revision: af8dc5bc080539274fd32b13be2125a8007d82e3
   specs:
     ruby-saml-idp (0.3.2)
       uuid
