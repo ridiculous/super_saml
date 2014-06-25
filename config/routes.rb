@@ -1,5 +1,7 @@
 SuperSaml::Application.routes.draw do
 
+  resources :fields
+
   root to: 'home#index'
 
   get 'saml/initialize', :to => 'saml#init'

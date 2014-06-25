@@ -1,5 +1,6 @@
-PATH
-  remote: ../ruby-saml-idp
+GIT
+  remote: git://github.com/ridiculous/ruby-saml-idp.git
+  revision: 3dcc2c4311b697c00d96becf21a02240a3446a7c
   specs:
     ruby-saml-idp (0.3.2)
       uuid
@@ -38,6 +39,9 @@ GEM
     execjs (2.2.0)
     hike (1.2.3)
     i18n (0.6.9)
+    jquery-rails (3.1.1)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
     json (1.8.1)
     macaddr (1.7.1)
       systemu (~> 2.6.2)
@@ -105,6 +109,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jquery-rails
   pry
   rails (= 4.0.3)
   ruby-saml

@@ -1,0 +1,20 @@
+<h3>The fingerprint of the X509 Certificate</h3>
+<div>
+  <b><%= SamlIdp::Default::FINGERPRINT %></b>
+</div>
+<%= form_tag do %>
+  <%= hidden_field_tag("SAMLRequest", params[:SAMLRequest]) %>
+  <% if @fields.any? %>
+    <% @fields.each do |field| %>
+      <p><%= label_tag("attributes[#{field.name}]", field.name.titleize) %></p>
+      <p><%= text_field_tag("attributes[#{field.name}]", field.value) %></p>
+    <% end %>
+  <% else %>
+    <p><b>Ahhhh! You don't have any fields</b></p>
+  <% end %>
+  <p>
+    <%= submit_tag "Create SAML Request" %>
+    or
+    <%= link_to('Go back', root_path) %>
+  </p>
+<% end %>

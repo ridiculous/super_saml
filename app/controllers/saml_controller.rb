@@ -3,9 +3,11 @@ class SamlController < ApplicationController
 
   def init
     request = OneLogin::RubySaml::Authrequest.new
-    url = request.create(saml_settings)
-    url << "&RelayState=#{params[:relay_state]}" if params[:relay_state]
-    redirect_to(url)
+    if params[:consumer_service_url].present?
+      redirect_to(request.create(saml_settings))
+    else
+      redirect_to(root_path, alert: 'Consumer Service URL is required!')
+    end
   end
 
   def metadata
@@ -17,8 +19,8 @@ class SamlController < ApplicationController
 
   def saml_settings
     settings = OneLogin::RubySaml::Settings.new
-    settings.assertion_consumer_service_url = ''
-    settings.issuer = ''
+    settings.assertion_consumer_service_url = params[:consumer_service_url]
+    settings.issuer = params[:consumer_service_url]
     settings.idp_sso_target_url = "#{host_with_port}/saml/auth"
     settings.idp_cert_fingerprint = SamlIdp::Default::FINGERPRINT
     settings.name_identifier_format = "urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified"
