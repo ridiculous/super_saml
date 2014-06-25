@@ -17,8 +17,8 @@ class SamlController < ApplicationController
 
   def saml_settings
     settings = OneLogin::RubySaml::Settings.new
-    settings.assertion_consumer_service_url = 'https://vimas.alpha.womply.com/saml/callback' # "http://#{request.host_with_port}/saml/callback"
-    settings.issuer = 'https://vimas.alpha.womply.com/saml/callback' # "http://#{request.host_with_port}"
+    settings.assertion_consumer_service_url = ''
+    settings.issuer = ''
     settings.idp_sso_target_url = "#{host_with_port}/saml/auth"
     settings.idp_cert_fingerprint = SamlIdp::Default::FINGERPRINT
     settings.name_identifier_format = "urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified"
