@@ -1,4 +1,4 @@
-README
+Super SAML!
 =====
 
 Just `git clone git@github.com:ridiculous/super_saml.git` and `bundle install`
