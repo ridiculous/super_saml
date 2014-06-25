@@ -1,7 +1,7 @@
-== README
+README
+=====
 
 Just `git clone git@github.com:ridiculous/super_saml.git` and `bundle install`
 
-Uses SQLite for database and lets you create fields to post to your Consumer Service.
-
-Some required fields for posting may include a `guid` or `email`
+You can dynamically create fields and values to post to your Consumer Service. Some example fields may
+include a `guid`, `email` or whatever the Consumer Service is using to find the user.
