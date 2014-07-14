@@ -29,7 +29,7 @@ class SamlController < ApplicationController
 
   def host_with_port
     str = "#{request.protocol}#{request.host}"
-    str << ':3000' if Rails.env.development?
+    str << ':3001' if Rails.env.development?
     str
   end
 end
